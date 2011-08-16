@@ -1,0 +1,44 @@
+plugin.tx_taxonomy {
+	view {
+		templateRootPath = {$plugin.tx_taxonomy.view.templateRootPath}
+		partialRootPath = {$plugin.tx_taxonomy.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_taxonomy.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_taxonomy.persistence.storagePid}
+	}
+}
+
+plugin.tx_taxonomy._CSS_DEFAULT_STYLE (
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-taxonomy-pi1 table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-taxonomy-pi1 table th {
+		font-weight:bold;
+	}
+
+	.tx-taxonomy-pi1 table td {
+		vertical-align:top;
+	}
+)
+
+
+
+ # Module configuration
+module.tx_taxonomy {
+	persistence {
+		storagePid = {$plugin.tx_taxonomy.persistence.storagePid}
+	}
+	view {
+		templateRootPath = {$module.tx_taxonomy.view.templateRootPath}
+		partialRootPath = {$module.tx_taxonomy.view.partialRootPath}
+		layoutRootPath = {$module.tx_taxonomy.view.layoutRootPath}
+	}
+}

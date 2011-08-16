@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for the Taxonomy extension in the FRONTEND</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_taxonomy_domain_model_conceptscheme">A set of concepts, optionally including statements about semantic relationships between those concepts. Thesauri, classification schemes, subject heading lists, taxonomies, 'folksonomies', and other types of controlled vocabulary are all examples of concept schemes. Concept schemes are also embedded in glossaries and terminologies.</label>
+			<label index="tx_taxonomy_domain_model_conceptscheme.concepts">A collection of concepts.</label>
+			<label index="tx_taxonomy_domain_model_concept">An idea or notion; a unit of thought.</label>
+			<label index="tx_taxonomy_domain_model_concept.pref_label">Preferred Label. The property skosxl:prefLabel is used to associate an skosxl:Label with a skos:Concept. The property is analogous to skos:prefLabel.</label>
+			<label index="tx_taxonomy_domain_model_concept.alt_labels">Alternative Label. The property skosxl:altLabel is used to associate an skosxl:Label with a skos:Concept. The property is analogous to skos:altLabel.</label>
+			<label index="tx_taxonomy_domain_model_concept.hidden_labels">Hidden Label. The property skosxl:hiddenLabel is used to associate an skosxl:Label with a skos:Concept. The property is analogous to skos:hiddenLabel.</label>
+			<label index="tx_taxonomy_domain_model_concept.notes">notes</label>
+			<label index="tx_taxonomy_domain_model_lexicallabel">A special class of lexical entities.</label>
+			<label index="tx_taxonomy_domain_model_lexicallabel.value">The value of the label. Combined with the language it represents the literal form of the label.</label>
+			<label index="tx_taxonomy_domain_model_collection">A meaningful collection of concepts.</label>
+			<label index="tx_taxonomy_domain_model_collection.ordered">An ordered collection of concepts, where both the grouping and the ordering are meaningful.</label>
+			<label index="tx_taxonomy_domain_model_collection.concepts">A collection of concepts.</label>
+			<label index="tx_taxonomy_domain_model_relationtype">An abstract relation type denoting the relation between two things.</label>
+			<label index="tx_taxonomy_domain_model_relationtype.name">The label of a relation.</label>
+			<label index="tx_taxonomy_domain_model_relationtype.description">A short descriptive text.</label>
+			<label index="tx_taxonomy_domain_model_note">Notes are used to provide information relating to SKOS concepts. There is no restriction on the nature of this information, e.g., it could be plain text, hypertext, or an image; it could be a definition, information about the scope of a concept, editorial information, or any other type of information.</label>
+			<label index="tx_taxonomy_domain_model_note.tx_taxonomy_type">One of note, changeNote, definition, editorialNote, example, historyNote, or scopeNote</label>
+			<label index="tx_taxonomy_domain_model_note.tx_taxonomy_value">value</label>
+		</languageKey>
+	</data>
+</T3locallang>

@@ -1,0 +1,58 @@
+[
+         {
+            "nodeType":"1",
+            "cls":"typo3-pagetree-topPanel-button",
+            "iconCls":"t3-icon t3-icon-apps t3-icon-apps-pagetree t3-icon-pagetree-page-default",
+            "title":"Standard",
+            "tooltip":"Standard"
+         },
+         {
+            "nodeType":"6",
+            "cls":"typo3-pagetree-topPanel-button",
+            "iconCls":"t3-icon t3-icon-apps t3-icon-apps-pagetree t3-icon-pagetree-page-backend-users",
+            "title":"Backend User Section",
+            "tooltip":"Backend User Section"
+         },
+         {
+            "nodeType":"4",
+            "cls":"typo3-pagetree-topPanel-button",
+            "iconCls":"t3-icon t3-icon-apps t3-icon-apps-pagetree t3-icon-pagetree-page-shortcut",
+            "title":"Shortcut",
+            "tooltip":"Shortcut"
+         },
+         {
+            "nodeType":"7",
+            "cls":"typo3-pagetree-topPanel-button",
+            "iconCls":"t3-icon t3-icon-apps t3-icon-apps-pagetree t3-icon-pagetree-page-mountpoint",
+            "title":"Mount Point",
+            "tooltip":"Mount Point"
+         },
+         {
+            "nodeType":"3",
+            "cls":"typo3-pagetree-topPanel-button",
+            "iconCls":"t3-icon t3-icon-apps t3-icon-apps-pagetree t3-icon-pagetree-page-shortcut-external",
+            "title":"Link to External URL",
+            "tooltip":"Link to External URL"
+         },
+         {
+            "nodeType":"254",
+            "cls":"typo3-pagetree-topPanel-button",
+            "iconCls":"t3-icon t3-icon-apps t3-icon-apps-pagetree t3-icon-pagetree-folder-default",
+            "title":"Folder",
+            "tooltip":"Folder"
+         },
+         {
+            "nodeType":"255",
+            "cls":"typo3-pagetree-topPanel-button",
+            "iconCls":"t3-icon t3-icon-apps t3-icon-apps-pagetree t3-icon-pagetree-page-recycler",
+            "title":"Recycler",
+            "tooltip":"Recycler"
+         },
+         {
+            "nodeType":"199",
+            "cls":"typo3-pagetree-topPanel-button",
+            "iconCls":"t3-icon t3-icon-apps t3-icon-apps-pagetree t3-icon-pagetree-spacer",
+            "title":"Menu Separator",
+            "tooltip":"Menu Separator"
+         }
+      ]

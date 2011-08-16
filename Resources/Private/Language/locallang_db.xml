@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'taxonomy'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_taxonomy_domain_model_conceptscheme">Concept Scheme</label>
+			<label index="tx_taxonomy_domain_model_conceptscheme.concepts">Concepts</label>
+			<label index="tx_taxonomy_domain_model_concept">Concept</label>
+			<label index="tx_taxonomy_domain_model_concept.pref_label">Pref Label</label>
+			<label index="tx_taxonomy_domain_model_concept.alt_labels">Alt Labels</label>
+			<label index="tx_taxonomy_domain_model_concept.hidden_labels">Hidden Labels</label>
+			<label index="tx_taxonomy_domain_model_concept.notes">Notes</label>
+			<label index="tx_taxonomy_domain_model_concept.parent">Concept Parent</label>
+			<label index="tx_taxonomy_domain_model_lexicallabel">Lexical Label</label>
+			<label index="tx_taxonomy_domain_model_lexicallabel.tx_taxonomy_value">Value</label>
+			<label index="tx_taxonomy_domain_model_lexicallabel.tx_extbase_type">Label Type</label>
+			<label index="tx_taxonomy_domain_model_lexicallabel.tx_extbase_type.Tx_Taxonomy_Domain_Model_PrefLabel">Preferred Label</label>
+			<label index="tx_taxonomy_domain_model_lexicallabel.tx_extbase_type.Tx_Taxonomy_Domain_Model_AltLabel">Alternative Label</label>
+			<label index="tx_taxonomy_domain_model_lexicallabel.tx_extbase_type.Tx_Taxonomy_Domain_Model_HiddenLabel">Hidden Label</label>
+			<label index="tx_taxonomy_domain_model_lexicallabel.tx_taxonomy_value">Value</label>
+			<label index="tx_taxonomy_domain_model_collection">Collection</label>
+			<label index="tx_taxonomy_domain_model_collection.ordered">Ordered</label>
+			<label index="tx_taxonomy_domain_model_collection.concepts">Concepts</label>
+			<label index="tx_taxonomy_domain_model_relationtype">Relation Type</label>
+			<label index="tx_taxonomy_domain_model_lexicallabel.tx_extbase_type">Label Type</label>
+			<label index="tx_taxonomy_domain_model_lexicallabel.tx_extbase_type.Tx_Taxonomy_Domain_Model_SemanticRelationType">semantic Relation Type</label>
+			<label index="tx_taxonomy_domain_model_lexicallabel.tx_extbase_type.Tx_Taxonomy_Domain_Model_LabelRelationType">Label Relation Type</label>
+			<label index="tx_taxonomy_domain_model_relationtype.name">Name</label>
+			<label index="tx_taxonomy_domain_model_relationtype.description">Description</label>
+			<label index="tx_taxonomy_domain_model_note">Note</label>
+			<label index="tx_taxonomy_domain_model_note.tx_taxonomy_type">Type</label>
+			<label index="tx_taxonomy_domain_model_note.tx_taxonomy_type.note">(Simple) Note</label>
+			<label index="tx_taxonomy_domain_model_note.tx_taxonomy_type.changeNote">Change Note</label>
+			<label index="tx_taxonomy_domain_model_note.tx_taxonomy_type.definition">Definition</label>
+			<label index="tx_taxonomy_domain_model_note.tx_taxonomy_type.editorialNote">Editorial Note</label>
+			<label index="tx_taxonomy_domain_model_note.tx_taxonomy_type.example">Example</label>
+			<label index="tx_taxonomy_domain_model_note.tx_taxonomy_type.historyNote">History Note</label>
+			<label index="tx_taxonomy_domain_model_note.tx_taxonomy_type.scopeNote">Scope Note</label>
+			<label index="tx_taxonomy_domain_model_note.value">Text</label>
+		</languageKey>
+	</data>
+</T3locallang>

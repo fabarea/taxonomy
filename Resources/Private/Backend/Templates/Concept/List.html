@@ -1,0 +1,32 @@
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+
+If you modify this template, do not forget to change the overwrite settings 
+in /Configuration/Kickstarter/settings.yaml:
+  Resources:
+    Private: 
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the kickstarter
+
+<f:section name="content">
+	<f:flashMessages />
+
+	<div class="typo3-fullDoc" id="typo3-fullDoc" style="overflow: hidden; position:absolute; width:100%; height: 100%"/>
+	<div id="hello-win" class="x-hidden">
+    <div class="x-window-header">Hello Dialog</div>
+    <div id="hello-tabs">
+        <!-- Auto create tab 1 -->
+        <div class="x-tab" title="Hello World 1">
+            <p>Hello...</p>
+        </div>
+        <!-- Auto create tab 2 -->
+        <div class="x-tab" title="Hello World 2">
+            <p>... World!</p>
+        </div>
+    </div>
+</div>
+</f:section>

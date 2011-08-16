@@ -1,0 +1,63 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:taxonomy/Configuration/TypoScript/setup.txt">
+
+config.tx_extbase {
+	persistence{
+		classes {
+			Tx_Taxonomy_Domain_Model_LexicalLabel {
+				mapping	{
+					recordType = Tx_Taxonomy_Domain_Model_LexicalLabel
+					columns {
+						tx_taxonomy_value.mapOnProperty = value
+					}
+				}
+				subclasses {
+					Tx_Taxonomy_Domain_Model_PrefLabel = Tx_Taxonomy_Domain_Model_PrefLabel
+					Tx_Taxonomy_Domain_Model_AltLabel = Tx_Taxonomy_Domain_Model_AltLabel
+					Tx_Taxonomy_Domain_Model_HiddenLabel = Tx_Taxonomy_Domain_Model_HiddenLabel
+				}
+			}
+			Tx_Taxonomy_Domain_Model_PrefLabel {
+				mapping	{
+					tableName = tx_taxonomy_domain_model_lexicallabel
+					recordType = Tx_Taxonomy_Domain_Model_PrefLabel
+				}
+			}
+			Tx_Taxonomy_Domain_Model_AltLabel {
+				mapping	{
+					tableName = tx_taxonomy_domain_model_lexicallabel
+					recordType = Tx_Taxonomy_Domain_Model_AltLabel
+				}
+			}
+			Tx_Taxonomy_Domain_Model_HiddenLabel {
+				mapping	{
+					tableName = tx_taxonomy_domain_model_lexicallabel
+					recordType = Tx_Taxonomy_Domain_Model_HiddenLabel
+				}
+			}
+			Tx_Taxonomy_Domain_Model_RelationType {
+				mapping	{
+					recordType = Tx_Taxonomy_Domain_Model_RelationType
+					columns {
+						tx_taxonomy_type.mapOnProperty = type
+					}
+				}
+				subclasses {
+					Tx_Taxonomy_Domain_Model_SemanticRelationType = Tx_Taxonomy_Domain_Model_SemanticRelationType
+					Tx_Taxonomy_Domain_Model_LabelRelationType = Tx_Taxonomy_Domain_Model_LabelRelationType
+				}
+			}
+			Tx_Taxonomy_Domain_Model_SemanticRelationType {
+				mapping	{
+					tableName = tx_taxonomy_domain_model_relationtype
+					recordType = Tx_Taxonomy_Domain_Model_SemanticRelationType
+				}
+			}
+			Tx_Taxonomy_Domain_Model_LabelRelationType {
+				mapping	{
+					tableName = tx_taxonomy_domain_model_relationtype
+					recordType = Tx_Taxonomy_Domain_Model_LabelRelationType
+				}
+			}
+		}
+	}
+}
