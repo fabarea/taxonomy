@@ -6,7 +6,7 @@ if (!defined ('TYPO3_MODE')){
 // Override ExtJS Theme for ExtJS 4 compatibility
 // @todo: remove this hook when TYPO3 v4 will be compatible with ExtJS 4
 if ($GLOBALS['_GET']['M'] == 'user_TaxonomyTxTaxonomyM1') {
-	#$GLOBALS['TBE_STYLES']['extJS']['theme'] = t3lib_extMgm::extRelPath($_EXTKEY) . 'Resources/Public/Libraries/ExtJS/resources/css/ext-all-gray.css';
+	$GLOBALS['TBE_STYLES']['extJS']['theme'] = t3lib_extMgm::extRelPath($_EXTKEY) . 'Resources/Public/Libraries/ExtJS/resources/css/ext-all-gray.css';
 }
 
 if (TYPO3_MODE === 'BE') {
@@ -20,12 +20,8 @@ if (TYPO3_MODE === 'BE') {
 		'tx_taxonomy_m1',	// Submodule key
 		'',						// Position
 		array(
-			'Concept' => 'list, show, new, create, edit, update, delete',
-			'ConceptScheme' => 'list, show, new, create, edit, update, delete',
-			'LexicalLabel' => 'list, show, new, create, edit, update, delete',
-			'Collection' => 'list, show, new, create, edit, update, delete',
-			'LabelRelationType' => 'list, show, new, create, edit, update, delete',
-			'SemanticRelationType' => 'list, show, new, create, edit, update, delete',
+			# list, show, new, create, edit, update, delete
+			'Concept' => 'list', 
 		),
 		array(
 			'access' => 'user,group',
