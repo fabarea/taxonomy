@@ -60,7 +60,7 @@ class Tx_Taxonomy_ViewHelpers_Be_ModuleContainerViewHelper extends Tx_Taxonomy_V
 	 *
 	 * @var string The extension Key
 	 */
-	protected $extensionKey = 'extjs_sample';
+	protected $extensionKey = 'taxonomy';
 	
 	/**
 	 * Renders start page with template.php and pageTitle.
@@ -182,7 +182,7 @@ EOF;
 	
 		$fileStarter = '/typo3temp/' . $camelExtensionName . '-starter.js';
 		// @todo: file is written each time. Should be detected as done by the CSS / JS Compressor in the Core
-		t3lib_div::writeFile(PATH_site . $fileStarter, $requireJsStarter);
+		$result = t3lib_div::writeFile(PATH_site . $fileStarter, $requireJsStarter);
 				
 			// @todo: baseUrl: "/typo3/" must not be hardcoded
 		$requireJsTag = <<<EOF

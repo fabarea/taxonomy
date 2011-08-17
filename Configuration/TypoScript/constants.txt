@@ -4,15 +4,15 @@
 
 module.tx_taxonomy {
 	view {
-		# cat=plugin.tx_taxonomy/file; type=string; label=Path to template root (BE)
+		# cat=module.tx_taxonomy/file; type=string; label=Path to template root (BE)
 		templateRootPath = EXT:taxonomy/Resources/Private/Backend/Templates/
-		# cat=plugin.tx_taxonomy/file; type=string; label=Path to template partials (BE)
+		# cat=module.tx_taxonomy/file; type=string; label=Path to template partials (BE)
 		partialRootPath = EXT:taxonomy/Resources/Private/Backend/Partials/
-		# cat=plugin.tx_taxonomy/file; type=string; label=Path to template layouts (BE)
+		# cat=module.tx_taxonomy/file; type=string; label=Path to template layouts (BE)
 		layoutRootPath = EXT:taxonomy/Resources/Private/Backend/Layouts/
 	}
 	persistence {
-		# cat=plugin.tx_taxonomy//a; type=int+; label=Default storage PID
+		# cat=module.tx_taxonomy//a; type=int+; label=Default storage PID
 		storagePid = auto
 	}
 }

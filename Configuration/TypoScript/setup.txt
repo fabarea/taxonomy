@@ -4,7 +4,7 @@
 
 module.tx_taxonomy {
 	persistence {
-		storagePid = {$plugin.tx_taxonomy.persistence.storagePid}
+		storagePid = {$module.tx_taxonomy.persistence.storagePid}
 	}
 	view {
 		templateRootPath = {$module.tx_taxonomy.view.templateRootPath}
