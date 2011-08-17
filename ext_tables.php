@@ -3,27 +3,21 @@ if (!defined ('TYPO3_MODE')){
 	die ('Access denied.');
 }
 
-Tx_Extbase_Utility_Extension::registerPlugin(
-	$_EXTKEY,
-	'Admin',
-	'Taxonomy Administration'
-);
-
-//$TCA['tt_content']['types']['list']['subtypes_addlist'][$_EXTKEY . '_admin'] = 'pi_flexform';
-//t3lib_extMgm::addPiFlexFormValue($_EXTKEY . '_admin', 'FILE:EXT:' . $_EXTKEY . '/Configuration/FlexForms/flexform_admin.xml');
-
-
-
+// Override ExtJS Theme for ExtJS 4 compatibility
+// @todo: remove this hook when TYPO3 v4 will be compatible with ExtJS 4
+if ($GLOBALS['_GET']['M'] == 'user_TaxonomyTxTaxonomyM1') {
+	#$GLOBALS['TBE_STYLES']['extJS']['theme'] = t3lib_extMgm::extRelPath($_EXTKEY) . 'Resources/Public/Libraries/ExtJS/resources/css/ext-all-gray.css';
+}
 
 if (TYPO3_MODE === 'BE') {
 
 	/**
-	* Registers a Backend Module
-	*/
+	 * Registers a Backend Module
+	 */
 	Tx_Extbase_Utility_Extension::registerModule(
 		$_EXTKEY,
 		'user',	 // Make module a submodule of 'web'
-		'admin',	// Submodule key
+		'tx_taxonomy_m1',	// Submodule key
 		'',						// Position
 		array(
 			'Concept' => 'list, show, new, create, edit, update, delete',
@@ -39,9 +33,7 @@ if (TYPO3_MODE === 'BE') {
 			'labels' => 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang_admin.xml',
 		)
 	);
-
 }
-
 
 t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Taxonomy');
 
