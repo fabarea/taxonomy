@@ -37,7 +37,7 @@ define(['Taxonomy/Core/Application', 'Taxonomy/Core/Registry', 'Taxonomy/Module/
 			Registry.set('docheader/top', ['button1', '->', 'button2']);
 			Registry.set('docheader/bottom', ['button3', 'button4']);
 			
-			Registry.set('layout', 'TYPO3.Taxonomy.Module.ContentBrowser.ContentBrowserView', {title: 'asdf'});
+			Registry.set('layout', 'TYPO3.Taxonomy.Module.Content.ContentView', {title: 'asdf'});
 
 			//Registry.set('layout', 'bar');
 			//Registry.set('layout', 'baz');

@@ -1,6 +1,6 @@
 "use strict";
 
-Ext.ns("TYPO3.Taxonomy.Module.ContentBrowser");
+Ext.ns("TYPO3.Taxonomy.Module.Content");
 	
 /*                                                                        *
  * This script is part of the TYPO3 project.                              *
@@ -24,14 +24,14 @@ Ext.ns("TYPO3.Taxonomy.Module.ContentBrowser");
 define(['Taxonomy/Core/Application', 'Taxonomy/Components/SearchBar'], function(Application) {
 
 	/**
-	 * @class TYPO3.Taxonomy.Module.ContentBrowser.ContentBrowserSearch
+	 * @class TYPO3.Taxonomy.Module.Content.ContentSearch
 	 * 
 	 * The search element in the content browser view
 	 * 
-	 * @namespace TYPO3.Taxonomy.Module.ContentBrowser
+	 * @namespace TYPO3.Taxonomy.Module.Content
 	 * @extends Ext.Panel
 	 */
-	return Ext.define('TYPO3.Taxonomy.Module.ContentBrowser.ContentBrowserSearch', {
+	return Ext.define('TYPO3.Taxonomy.Module.Content.ContentSearch', {
 		
 		/**
 		 * The Component being extended
@@ -45,7 +45,7 @@ define(['Taxonomy/Core/Application', 'Taxonomy/Components/SearchBar'], function(
 		 *
 		 * @type {Object}
 		 */
-		alias: 'widget.TYPO3.Taxonomy.Module.ContentBrowser.ContentBrowserSearch',
+		alias: 'widget.TYPO3.Taxonomy.Module.Content.ContentSearch',
 
 		/**
 		 * Initializer
@@ -72,7 +72,7 @@ define(['Taxonomy/Core/Application', 'Taxonomy/Components/SearchBar'], function(
 			};
 		
 			Ext.apply(this, config);
-			TYPO3.Taxonomy.Module.ContentBrowser.ContentBrowserSearch.superclass.initComponent.call(this);
+			TYPO3.Taxonomy.Module.Content.ContentSearch.superclass.initComponent.call(this);
 		}
 	});
 });

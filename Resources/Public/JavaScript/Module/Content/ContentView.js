@@ -1,6 +1,6 @@
 "use strict";
 
-Ext.ns("TYPO3.Taxonomy.Module.ContentBrowser");
+Ext.ns("TYPO3.Taxonomy.Module.Content");
 	
 /*                                                                        *
  * This script is part of the TYPO3 project.                              *
@@ -23,18 +23,18 @@ Ext.ns("TYPO3.Taxonomy.Module.ContentBrowser");
  *                                                                        */
 
 var dependencies;
-dependencies = ['Taxonomy/Core/Application', 'Taxonomy/Module/ContentBrowser/ContentBrowserGrid', 'Taxonomy/Module/ContentBrowser/ContentBrowserSearch', 'Taxonomy/Components/SearchBar']
+dependencies = ['Taxonomy/Core/Application', 'Taxonomy/Module/Content/ContentGrid', 'Taxonomy/Module/Content/ContentSearch', 'Taxonomy/Components/SearchBar']
 define(dependencies, function(Application) {
 
 	/**
-	 * @class TYPO3.Taxonomy.Module.ContentBrowser.ContentBrowserView
+	 * @class TYPO3.Taxonomy.Module.Content.ContentView
 	 * 
 	 * The outermost user interface component.
 	 * 
-	 * @namespace TYPO3.Taxonomy.Module.ContentBrowser
+	 * @namespace TYPO3.Taxonomy.Module.Content
 	 * @extends Ext.Panel
 	 */
-	return Ext.define('TYPO3.Taxonomy.Module.ContentBrowser.ContentBrowserView', {
+	return Ext.define('TYPO3.Taxonomy.Module.Content.ContentView', {
 		
 		/**
 		 * The Component being extended
@@ -48,7 +48,7 @@ define(dependencies, function(Application) {
 		 *
 		 * @type {Object}
 		 */
-		alias: 'widget.TYPO3.Taxonomy.Module.ContentBrowser.ContentBrowserView',
+		alias: 'widget.TYPO3.Taxonomy.Module.Content.ContentView',
 
 		/**
 		 * Initializer
@@ -91,57 +91,15 @@ define(dependencies, function(Application) {
 //						html: 'dummy text'
 //					}]
 //				}, {
-                     xtype: 'tabpanel',
-                     plain: true,
-					 collapsible: false,
-                     region: 'center',
-                     margins: '0 5 5 5',
-                     activeTab: 0,
-                     items: [{
-						title: 'Tab 1',
-						cls: 'inner-tab-custom', // custom styles in layout-browser.css
-						layout: 'border',
-						
-						// Make sure IE can still calculate dimensions after a resize when the tab is not active.
-						// With display mode, if the tab is rendered but hidden, IE will mess up the layout on show:
-						hideMode: Ext.isIE ? 'offsets' : 'display',
-						items: [{
-							/*
-							 * RIGHT PANEL
-							 */
-							xtype: 'panel',
-							collapsible: true,
-							collapsed: true,
-							region:'east',
-							split: true,
-//							collapseMode: 'omitted',
-//							animCollapse: true,
-//							width: '10%',
-							items: [{
-								xtype: 'container',
-								html: 'dummy text 1'
-							}]
-						}, {
-							/*
-							 * CENTER PANEL
-							 */
-							xtype: 'panel',
-							region:'center',
-							items: [{
-								xtype: 'container',
-								items: [{
-									xtype: 'TYPO3.Taxonomy.Module.ContentBrowser.ContentBrowserSearch'
-								}, {
-									xtype: 'TYPO3.Taxonomy.Module.ContentBrowser.ContentBrowserGrid'
-								}]
-							}]
-						}]
-                     }]
+                    xtype: 'panel',
+					region: 'center',
+					collapsible: false,
+					html: 'coucou'
                  }]
 			}
 		
 			Ext.apply(this, config);
-			TYPO3.Taxonomy.Module.ContentBrowser.ContentBrowserView.superclass.initComponent.call(this);
+			TYPO3.Taxonomy.Module.Content.ContentView.superclass.initComponent.call(this);
 		}
 	});
 });

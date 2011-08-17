@@ -4,6 +4,15 @@ Newsletter style
 $Id: newsletter.css 37081 2010-08-21 11:26:34Z fabien_u $
 - - - - - - - - - - - - - - - - - - - - - */
 
+
+.x-btn-default-toolbar-small {
+	border-color: #9D9D9D;
+	background-color: #F3F3F3;
+}
+
+
+
+
 .x-tree-node-collapsed .x-tree-node-icon ,
 .x-tree-node-expanded .x-tree-node-icon,
 .x-tree-node-leaf .x-tree-node-icon {

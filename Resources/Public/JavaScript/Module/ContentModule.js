@@ -25,7 +25,7 @@
  * Register and configure the Module
  * 
  */
-define(['Taxonomy/Core/Application', 'Taxonomy/Core/Registry', 'Taxonomy/Module/ContentBrowser/ContentBrowserView'], function(Application, Registry) {
+define(['Taxonomy/Core/Application', 'Taxonomy/Core/Registry', 'Taxonomy/Module/Content/ContentView'], function(Application, Registry) {
 
 	// Register Layout Module
 	console.log("Registering Module Content Browser");

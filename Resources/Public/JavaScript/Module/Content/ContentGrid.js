@@ -1,6 +1,6 @@
 "use strict";
 
-Ext.ns("TYPO3.Taxonomy.Module.ContentBrowser");
+Ext.ns("TYPO3.Taxonomy.Module.Content");
 	
 /*                                                                        *
  * This script is part of the TYPO3 project.                              *
@@ -24,14 +24,14 @@ Ext.ns("TYPO3.Taxonomy.Module.ContentBrowser");
 define(['Taxonomy/Core/Application'], function(Application) {
 
 	/**
-	 * @class TYPO3.Taxonomy.Module.ContentBrowser.ContentBrowserGrid
+	 * @class TYPO3.Taxonomy.Module.Content.ContentGrid
 	 * 
 	 * The outermost user interface component.
 	 * 
-	 * @namespace TYPO3.Taxonomy.Module.ContentBrowser
+	 * @namespace TYPO3.Taxonomy.Module.Content
 	 * @extends Ext.Panel
 	 */
-	Ext.define('TYPO3.Taxonomy.Module.ContentBrowser.ContentBrowserGrid', {
+	Ext.define('TYPO3.Taxonomy.Module.Content.ContentGrid', {
 		
 		/**
 		 * The Component being extended
@@ -45,7 +45,7 @@ define(['Taxonomy/Core/Application'], function(Application) {
 		 *
 		 * @cfg {String}
 		 */
-		alias: 'widget.TYPO3.Taxonomy.Module.ContentBrowser.ContentBrowserGrid',
+		alias: 'widget.TYPO3.Taxonomy.Module.Content.ContentGrid',
 
 		/**
 		 * The store 
@@ -73,7 +73,7 @@ define(['Taxonomy/Core/Application'], function(Application) {
 			};
 
 			Ext.apply(this, config);
-			TYPO3.Taxonomy.Module.ContentBrowser.ContentBrowserGrid.superclass.initComponent.call(this);
+			TYPO3.Taxonomy.Module.Content.ContentGrid.superclass.initComponent.call(this);
 			Application.fireEvent('TYPO3.Taxonomy.ConceptTree.afterInit', this);
 		},
 
@@ -91,7 +91,7 @@ define(['Taxonomy/Core/Application'], function(Application) {
 					console.log(this.getCount());
 				}
 			});
-			TYPO3.Taxonomy.Module.ContentBrowser.ContentBrowserGrid.superclass.onRender.apply(this, arguments);
+			TYPO3.Taxonomy.Module.Content.ContentGrid.superclass.onRender.apply(this, arguments);
 		},
 
 
@@ -219,7 +219,7 @@ define(['Taxonomy/Core/Application'], function(Application) {
 		_initStore: function() {
 			
 			this.store = Ext.create('Ext.data.DirectStore', {
-				storeId: 'TYPO3.Taxonomy.Module.ContentBrowser.ContentBrowserStore',
+				storeId: 'TYPO3.Taxonomy.Module.Content.ContentStore',
 				directFn: TYPO3.Taxonomy.Service.ExtDirect.Controller.RecordController.getRecords,
 				idProperty: 'uid',
 				root: 'data',
