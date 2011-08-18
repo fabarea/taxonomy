@@ -48,7 +48,7 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['RequireJS']['Taxonomy'] = Array(
 	'Files' => Array (
 		'Taxonomy/Core/Application', 
 		'Taxonomy/Module/UserInterfaceModule',
-		'Taxonomy/Module/ContentModule',
+		'Taxonomy/Module/ConceptModule',
 		'Taxonomy/Utils',
 	),
 

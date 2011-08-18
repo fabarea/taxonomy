@@ -9,7 +9,7 @@ $TCA['tx_taxonomy_domain_model_note'] = array(
 		'showRecordFieldList'	=> 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, tx_taxonomy_type, tx_taxonomy_value',
 	),
 	'types' => array(
-		'1' => array('showitem'	=> 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, tx_taxonomy_type, tx_taxonomy_value,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'),
+		'1' => array('showitem'	=> 'tx_taxonomy_type, tx_taxonomy_value'),
 	),
 	'palettes' => array(
 		'1' => array('showitem'	=> ''),

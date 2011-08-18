@@ -1,6 +1,6 @@
 "use strict";
 
-Ext.ns("TYPO3.Taxonomy.Module.Content");
+Ext.ns("TYPO3.Taxonomy.Module.Concept");
 	
 /*                                                                        *
  * This script is part of the TYPO3 project.                              *
@@ -22,19 +22,17 @@ Ext.ns("TYPO3.Taxonomy.Module.Content");
  * The TYPO3 project - inspiring people to share!                         *
  *                                                                        */
 
-var dependencies;
-dependencies = ['Taxonomy/Core/Application', 'Taxonomy/Module/Content/ContentGrid', 'Taxonomy/Module/Content/ContentSearch', 'Taxonomy/Components/SearchBar']
-define(dependencies, function(Application) {
+define(['Taxonomy/Core/Application'], function(Application) {
 
 	/**
-	 * @class TYPO3.Taxonomy.Module.Content.ContentView
+	 * @class TYPO3.Taxonomy.Module.Concept.ConceptView
 	 * 
 	 * The outermost user interface component.
 	 * 
-	 * @namespace TYPO3.Taxonomy.Module.Content
+	 * @namespace TYPO3.Taxonomy.Module.Concept
 	 * @extends Ext.Panel
 	 */
-	return Ext.define('TYPO3.Taxonomy.Module.Content.ContentView', {
+	return Ext.define('TYPO3.Taxonomy.Module.Concept.ConceptView', {
 		
 		/**
 		 * The Component being extended
@@ -48,7 +46,7 @@ define(dependencies, function(Application) {
 		 *
 		 * @type {Object}
 		 */
-		alias: 'widget.TYPO3.Taxonomy.Module.Content.ContentView',
+		alias: 'widget.TYPO3.Taxonomy.Module.Concept.ConceptView',
 
 		/**
 		 * Initializer
@@ -99,7 +97,7 @@ define(dependencies, function(Application) {
 			}
 		
 			Ext.apply(this, config);
-			TYPO3.Taxonomy.Module.Content.ContentView.superclass.initComponent.call(this);
+			TYPO3.Taxonomy.Module.Concept.ConceptView.superclass.initComponent.call(this);
 		}
 	});
 });

@@ -5,11 +5,12 @@ if (!defined ('TYPO3_MODE')) {
 
 $TCA['tx_taxonomy_domain_model_concept'] = array(
 	'ctrl' => $TCA['tx_taxonomy_domain_model_concept']['ctrl'],
-	'interface' => array(
-		'showRecordFieldList'	=> 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, pref_label, alt_labels, hidden_labels, notes, parent',
-	),
+	# @todo: define whether "interface" is still useful
+	#'interface' => array(
+	#	'showRecordFieldList'	=> 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, pref_label, alt_labels, hidden_labels, notes, parent',
+	#),
 	'types' => array(
-		'1' => array('showitem'	=> 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden, pref_label;;1, notes, parent,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'),
+		'1' => array('showitem'	=> 'pref_label;;1, notes, parent,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem'	=> 'alt_labels, hidden_labels'),

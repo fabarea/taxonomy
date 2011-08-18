@@ -87,11 +87,11 @@ define(['Taxonomy/Core/Application', 'Taxonomy/Core/Registry', 'Taxonomy/Module/
 			Ext.each(config, function(item) {
 				items.push(
 					{
-						xtype: 'TYPO3.Taxonomy.Module.Content.ContentView',
+						xtype: 'TYPO3.Taxonomy.Module.Concept.ConceptView',
 						region: 'center',
 						border: 0,
 						id: 'typo3-inner-docbody',
-						ref: '../../content',
+						ref: '../../conceptView',
 						layout: 'card',
 						activeItem: 0
 					}

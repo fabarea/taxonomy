@@ -171,7 +171,7 @@ t3lib_extMgm::allowTableOnStandardPages('tx_taxonomy_domain_model_note');
 $TCA['tx_taxonomy_domain_model_note'] = array(
 	'ctrl' => array(
 		'title'				=> 'LLL:EXT:taxonomy/Resources/Private/Language/locallang_db.xml:tx_taxonomy_domain_model_note',
-		'label' 			=> 'type',
+		'label' 			=> 'tx_taxonomy_value',
 		'tstamp' 			=> 'tstamp',
 		'crdate' 			=> 'crdate',
 		'dividers2tabs' => true,
