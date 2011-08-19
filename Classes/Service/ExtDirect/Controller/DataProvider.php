@@ -32,7 +32,7 @@
  * @copyright Copyright belongs to the respective authors
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  */
-class Tx_Taxonomy_ExtDirect_DataProvider extends Tx_Taxonomy_ExtDirect_AbstractDataProvider{
+class Tx_Taxonomy_Service_ExtDirect_Controller_DataProvider extends Tx_Taxonomy_Service_ExtDirect_Controller_AbstractDataProvider{
 		/**
 	 * Node limit that should be loaded for this request per mount
 	 *
@@ -94,7 +94,7 @@ class Tx_Taxonomy_ExtDirect_DataProvider extends Tx_Taxonomy_ExtDirect_AbstractD
 	 * @return t3lib_tree_NodeCollection
 	 */
 	 public function getNodes(t3lib_tree_Node $node, $mountPoint = 0, $level = 0) {
-		$nodeCollection = file_get_contents(__DIR__ . '/../../tree-data-level2.json');
+		$nodeCollection = file_get_contents(__DIR__ . '/../../../../tree-data-level2.json');
 		return $nodeCollection;
 		
 		/** @var $nodeCollection t3lib_tree_pagetree_NodeCollection */
@@ -267,9 +267,10 @@ class Tx_Taxonomy_ExtDirect_DataProvider extends Tx_Taxonomy_ExtDirect_AbstractD
 		$nodeCollection = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows('*', 'tx_taxonomy_domain_model_concept', $clause);
 		
 		
-		$nodeCollection = file_get_contents(__DIR__ . '/../../tree-data-level1.json');
-		
-		
+		$nodeCollection = file_get_contents(__DIR__ . '/../../../../tree-data-level1.json');
+
+
+
 		/** @var $subNode t3lib_tree_pagetree_Node */
 		$subNode = t3lib_div::makeInstance('t3lib_tree_pagetree_Node');
 		#$subNode = t3lib_tree_pagetree_Commands::getNewNode($record);

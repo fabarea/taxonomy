@@ -32,12 +32,12 @@
  * @copyright Copyright belongs to the respective authors
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  */
-class Tx_Taxonomy_ExtDirect_Tree extends Tx_Taxonomy_ExtDirect_AbstractTree {
+class Tx_Taxonomy_Service_ExtDirect_Controller_Tree extends Tx_Taxonomy_Service_ExtDirect_Controller_AbstractTree {
 	
 	/**
 	 * Data Provider
 	 *
-	 * @var Tx_Taxonomy_ExtDirect_DataProvider
+	 * @var Tx_Taxonomy_Service_ExtDirect_Controller_DataProvider
 	 */
 	protected $dataProvider = NULL;
 
@@ -47,8 +47,8 @@ class Tx_Taxonomy_ExtDirect_Tree extends Tx_Taxonomy_ExtDirect_AbstractTree {
 	 * @return void
 	 */
 	protected function initDataProvider() {
-		/** @var $dataProvider Tx_Taxonomy_ExtDirect_DataProvider */
-		$dataProvider = t3lib_div::makeInstance('Tx_Taxonomy_ExtDirect_DataProvider');
+		/** @var $dataProvider Tx_Taxonomy_Service_ExtDirect_Controller_DataProvider */
+		$dataProvider = t3lib_div::makeInstance('Tx_Taxonomy_Service_ExtDirect_Controller_DataProvider');
 		$this->setDataProvider($dataProvider);
 	}
 
@@ -72,7 +72,9 @@ class Tx_Taxonomy_ExtDirect_Tree extends Tx_Taxonomy_ExtDirect_AbstractTree {
 	 * @return array
 	 */
 	public function getNextTreeLevel($nodeId, $nodeData) {
-		
+
+
+
 		$this->initDataProvider();
 
 		/** @var $node t3lib_tree_pagetree_Node */
@@ -103,8 +105,8 @@ class Tx_Taxonomy_ExtDirect_Tree extends Tx_Taxonomy_ExtDirect_AbstractTree {
 			return array();
 		}
 
-		/** @var $node Tx_Taxonomy_ExtDirect_Node */
-		$node = t3lib_div::makeInstance('Tx_Taxonomy_ExtDirect_Node', (array) $nodeData);
+		/** @var $node Tx_Taxonomy_Service_ExtDirect_Controller_Node */
+		$node = t3lib_div::makeInstance('Tx_Taxonomy_Service_ExtDirect_Controller_Node', (array) $nodeData);
 
 		$this->initDataProvider();
 		if ($nodeId === 'root') {
@@ -171,8 +173,8 @@ class Tx_Taxonomy_ExtDirect_Tree extends Tx_Taxonomy_ExtDirect_AbstractTree {
 	 * @return array
 	 */
 	public function getIndicators() {
-		/** @var $indicatorProvider Tx_Taxonomy_ExtDirect_Indicator */
-		$indicatorProvider = t3lib_div::makeInstance('Tx_Taxonomy_ExtDirect_Indicator');
+		/** @var $indicatorProvider Tx_Taxonomy_Service_ExtDirect_Controller_Indicator */
+		$indicatorProvider = t3lib_div::makeInstance('Tx_Taxonomy_Service_ExtDirect_Controller_Indicator');
 		$indicatorHtmlArr = $indicatorProvider->getAllIndicators();
 		$indicator = array(
 				'html' => implode(' ', $indicatorHtmlArr),
@@ -216,7 +218,7 @@ class Tx_Taxonomy_ExtDirect_Tree extends Tx_Taxonomy_ExtDirect_AbstractTree {
 					'options.pageTree.disableIconLinkToContextmenu'
 				),
 				'indicator' => $indicators['html'],
-				'temporaryMountPoint' => Tx_Taxonomy_ExtDirect_Commands::getMountPointPath(),
+				'temporaryMountPoint' => Tx_Taxonomy_Service_ExtDirect_Controller_Commands::getMountPointPath(),
 			),
 
 			'Sprites' => array(

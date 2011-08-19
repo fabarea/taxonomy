@@ -22,7 +22,7 @@ Ext.ns("TYPO3.Taxonomy.Module.Concept");
  * The TYPO3 project - inspiring people to share!                         *
  *                                                                        */
 
-define(['Taxonomy/Core/Application'], function(Application) {
+define(['Taxonomy/Core/Application', 'Taxonomy/Module/Concept/ConceptTree'], function(Application) {
 
 	/**
 	 * @class TYPO3.Taxonomy.Module.Concept.ConceptView
@@ -71,8 +71,8 @@ define(['Taxonomy/Core/Application'], function(Application) {
 					region:'west',
 					width: 200,
 					items: [{
-						xtype: 'container',
-						html: 'dummy text'
+						xtype: 'TYPO3.Taxonomy.Module.Concept.Tree',
+						//ref: '../../../tree'
 					}]
 
 				}, {

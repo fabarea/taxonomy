@@ -33,69 +33,69 @@
  * @copyright Copyright belongs to the respective authors
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  */
-abstract class Tx_Taxonomy_ExtDirect_AbstractTree {
+abstract class Tx_Taxonomy_Service_ExtDirect_Controller_AbstractTree {
 
 	/**
 	 * Data Provider
 	 *
-	 * @var Tx_Taxonomy_ExtDirect_AbstractDataProvider
+	 * @var Tx_Taxonomy_Service_ExtDirect_Controller_AbstractDataProvider
 	 */
 	protected $dataProvider = NULL;
 
 	/**
 	 * Tree Node Decorator
 	 *
-	 * @var Tx_Taxonomy_ExtDirect_renderer_Abstract
+	 * @var Tx_Taxonomy_Service_ExtDirect_Controller_renderer_Abstract
 	 */
 	protected $nodeRenderer = NULL;
 	
 	/**
 	 * State Provider
 	 *
-	 * @var Tx_Taxonomy_ExtDirect_AbstractStateProvider
+	 * @var Tx_Taxonomy_Service_ExtDirect_Controller_AbstractStateProvider
 	 */
 	protected $stateProvider = NULL;
 
 	/**
-	 * @param Tx_Taxonomy_ExtDirect_AbstractDataProvider $dataProvider
+	 * @param Tx_Taxonomy_Service_ExtDirect_Controller_AbstractDataProvider $dataProvider
 	 * @return void
 	 */
-	public function setDataProvider(Tx_Taxonomy_ExtDirect_AbstractDataProvider $dataProvider) {
+	public function setDataProvider(Tx_Taxonomy_Service_ExtDirect_Controller_AbstractDataProvider $dataProvider) {
 		$this->dataProvider = $dataProvider;
 	}
 
 	/**
-	 * @return Tx_Taxonomy_ExtDirect_AbstractDataProvider
+	 * @return Tx_Taxonomy_Service_ExtDirect_Controller_AbstractDataProvider
 	 */
 	public function getDataProvider() {
 		return $this->dataProvider;
 	}
 
 	/**
-	 * @param Tx_Taxonomy_ExtDirect_renderer_Abstract $dataProvider
+	 * @param Tx_Taxonomy_Service_ExtDirect_Controller_renderer_Abstract $dataProvider
 	 * @return void
 	 */
-	public function setNodeRenderer(Tx_Taxonomy_ExtDirect_renderer_Abstract $nodeRenderer) {
+	public function setNodeRenderer(Tx_Taxonomy_Service_ExtDirect_Controller_renderer_Abstract $nodeRenderer) {
 		$this->nodeRenderer = $nodeRenderer;
 	}
 
 	/**
-	 * @return Tx_Taxonomy_ExtDirect_renderer_Abstract
+	 * @return Tx_Taxonomy_Service_ExtDirect_Controller_renderer_Abstract
 	 */
 	public function getNodeRenderer() {
 		return $this->nodeRenderer;
 	}
 
 	/**
-	 * @param Tx_Taxonomy_ExtDirect_AbstractStateProvider $stateProvider
+	 * @param Tx_Taxonomy_Service_ExtDirect_Controller_AbstractStateProvider $stateProvider
 	 * @return void
 	 */
-	public function setStateProvider(Tx_Taxonomy_ExtDirect_AbstractStateProvider $stateProvider) {
+	public function setStateProvider(Tx_Taxonomy_Service_ExtDirect_Controller_AbstractStateProvider $stateProvider) {
 		$this->stateProvider = $stateProvider;
 	}
 
 	/**
-	 * @return Tx_Taxonomy_ExtDirect_AbstractStateProvider
+	 * @return Tx_Taxonomy_Service_ExtDirect_Controller_AbstractStateProvider
 	 */
 	public function getStateProvider() {
 		return $this->stateProvider;
@@ -104,7 +104,7 @@ abstract class Tx_Taxonomy_ExtDirect_AbstractTree {
 	/**
 	 * Returns the root node
 	 *
-	 * @return Tx_Taxonomy_ExtDirect_Node
+	 * @return Tx_Taxonomy_Service_ExtDirect_Controller_Node
 	 */
 	abstract public function getRoot();
 	

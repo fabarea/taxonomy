@@ -32,7 +32,7 @@
  * @copyright Copyright belongs to the respective authors
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  */
-abstract class Tx_Taxonomy_ExtDirect_AbstractDataProvider {
+abstract class Tx_Taxonomy_Service_ExtDirect_Controller_AbstractDataProvider {
 	
 	/**
 	 * Root Node

@@ -31,7 +31,7 @@
  * @copyright Copyright belongs to the respective authors
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  */
-class Tx_Taxonomy_ExtDirect_Server extends Tx_Taxonomy_ExtDirect_AbstractHandler {
+class Tx_Taxonomy_Service_ExtDirect_Controller_Server extends Tx_Taxonomy_Service_ExtDirect_Controller_AbstractHandler {
 
 	/**
 	 * Fetches the next tree level
@@ -42,8 +42,8 @@ class Tx_Taxonomy_ExtDirect_Server extends Tx_Taxonomy_ExtDirect_AbstractHandler
 	 */
 	public function getNextTreeLevel($nodeId, $nodeData) {
 		
-		/** @var $dataProvider Tx_Taxonomy_ExtDirect_DataProvider */
-		$tree = t3lib_div::makeInstance('Tx_Taxonomy_ExtDirect_Tree');
+		/** @var $dataProvider Tx_Taxonomy_Service_ExtDirect_Controller_DataProvider */
+		$tree = t3lib_div::makeInstance('Tx_Taxonomy_Service_ExtDirect_Controller_Tree');
 		
 		return $tree->getNextTreeLevel($nodeId, $nodeData);
 	}

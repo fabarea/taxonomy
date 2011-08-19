@@ -31,9 +31,9 @@ if ($GLOBALS['_GET']['M'] == 'user_TaxonomyTxTaxonomyM1') {
 	$GLOBALS['TYPO3_CONF_VARS'][TYPO3_MODE]['XCLASS']['t3lib/class.t3lib_pagerenderer.php'] = t3lib_extMgm::extPath($_EXTKEY) . 'Classes/Xclass/class.ux_t3lib_pagerenderer.php';
 }
 
-// Register ExtDirect Endpoint 
+// Register ExtDirect Endpoint
 t3lib_extMgm::registerExtDirectComponent(
-    'TYPO3.Taxonomy.Service.ExtDirect.Controller.RecordController',
+    'TYPO3.Taxonomy.Service.ExtDirect.Controller.ConceptController',
     'EXT:taxonomy/Classes/Service/ExtDirect/Controller/ConceptController.php:Tx_Taxonomy_Service_ExtDirect_Controller_ConceptController'
 );
 
@@ -53,7 +53,7 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['RequireJS']['Taxonomy'] = Array(
 	),
 
 	// Default Path relative to the extension
-	'Path' => 'Resources/Public/JavaScript/',
+	'Path' => 'Resources/Public/JavaScript',
 	
 	// Code to launch the Application
 	'JavaScriptCode' => Array(

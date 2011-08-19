@@ -61,7 +61,7 @@ class Tx_Taxonomy_ViewHelpers_Be_ModuleContainerViewHelper extends Tx_Taxonomy_V
 	 * @var string The extension Key
 	 */
 	protected $extensionKey = 'taxonomy';
-	
+
 	/**
 	 * Renders start page with template.php and pageTitle.
 	 *
@@ -105,13 +105,13 @@ class Tx_Taxonomy_ViewHelpers_Be_ModuleContainerViewHelper extends Tx_Taxonomy_V
 				</script>
 			';
 		}
-		
+
 		if ($loadExtJs === TRUE) {
 				// @temp. ExtJS 4 should be part of the Core
 				// Define the patch
 			$this->extJsPath = t3lib_extMgm::extRelPath($this->extensionKey) . 'Resources/Public/Libraries/';
 			$this->pageRenderer->setExtJsPath($this->extJsPath . 'ExtJS/');
-			
+
 			// Load the library
 			$this->pageRenderer->loadExtJS(TRUE, $loadExtJsTheme);
 			$this->pageRenderer->addExtDirectCode();
@@ -137,21 +137,36 @@ class Tx_Taxonomy_ViewHelpers_Be_ModuleContainerViewHelper extends Tx_Taxonomy_V
 		if ($concatenate === TRUE) {
 			$this->pageRenderer->enableConcatenateFiles();
 		}
+
+			// Add RequiresJS code
+		$this->generateRequireJS();
 		
-			// Begin RequireJS
-			// @todo: put the code in a method and add Unit Test
-		
+		$includeCsh = FALSE;
+		$output = $doc->startPage($pageTitle, $includeCsh);
+		$output .= $this->pageRenderer->getBodyContent();
+		$output .= $doc->endPage();
+		return $output;
+	}
+
+	/**
+	 * Add RequiresJS code for dynamic JS loading.
+	 * @todo: add Unit Test
+	 *
+	 * @return void
+	 */
+	protected function generateRequireJS() {
+
 			// Add RequireJS as special element
 			// @todo: RequireJS library must land in the Core eventually
 		$requireJsPath = t3lib_extMgm::extRelPath($this->extensionKey) . 'Resources/Public/Libraries/RequireJS/require.js';
-		
+
 
 			// Computes all registred extension paths
 			// @todo: must be improved towards object oriented approach in the final release instead of the ungraceful $GLOBALS array (cf. t3lib_extMgm)
 		$extensionPath = array();
 		if (!empty($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['RequireJS'])) {
-			
-			
+
+
 			foreach ($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['RequireJS'] as $extensionName => $datastructure) {
 				$extensionKey = t3lib_div::camelCaseToLowerCaseUnderscored($extensionName);
 				$extensionPath[] = $extensionName . ': "' .t3lib_extMgm::extRelPath($extensionKey) . $datastructure['Path'] . '"';
@@ -159,12 +174,12 @@ class Tx_Taxonomy_ViewHelpers_Be_ModuleContainerViewHelper extends Tx_Taxonomy_V
 		}
 			// transform value to be readable by JS
 		$extensionPath = implode(',', $extensionPath);
-		
+
 			// Computes all registred files
 			// @todo: must be improved towards object oriented approach in the final release instead of the ungraceful $GLOBALS array (cf. t3lib_extMgm)
 		$camelExtensionName = t3lib_div::underscoredToUpperCamelCase($this->extensionKey);
 		if (!empty($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['RequireJS'][$camelExtensionName]['Files'])) {
-			
+
 				// json_encode with JSON_UNESCAPED_SLASHES option could be used here but unfortunately only available as of PHP 5.4
 			$javascriptFiles = implode('","', $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['RequireJS'][$camelExtensionName]['Files']);
 			$javascriptFiles = '["' . $javascriptFiles . '"]';
@@ -173,17 +188,17 @@ class Tx_Taxonomy_ViewHelpers_Be_ModuleContainerViewHelper extends Tx_Taxonomy_V
 
 				// Render JS code to be put on <head>
 			$requireJsStarter = <<<EOF
-define($javascriptFiles, 
+define($javascriptFiles,
 	function(Application) {
 		$javascriptCode
-});	
+});
 EOF;
 		}
-	
+
 		$fileStarter = '/typo3temp/' . $camelExtensionName . '-starter.js';
 		// @todo: file is written each time. Should be detected as done by the CSS / JS Compressor in the Core
 		$result = t3lib_div::writeFile(PATH_site . $fileStarter, $requireJsStarter);
-				
+
 			// @todo: baseUrl: "/typo3/" must not be hardcoded
 		$requireJsTag = <<<EOF
 	<script type="text/javascript">
@@ -193,20 +208,11 @@ EOF;
 				  $extensionPath
 			  },
 		  };
-	</script> 
+	</script>
 	<script src="$requireJsPath" data-main="$fileStarter"></script>
 EOF;
 			// Adds the RequireJS code on the <head>
 		$this->pageRenderer->addHeaderData($requireJsTag);
-		
-			// End RequireJS
-
-		$includeCsh = FALSE;
-		$output = $doc->startPage($pageTitle, $includeCsh);
-		$output .= $this->pageRenderer->getBodyContent();
-		$output .= $doc->endPage();
-		return $output;
 	}
-	
 }
 ?>
