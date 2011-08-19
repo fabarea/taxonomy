@@ -40,8 +40,7 @@ class Tx_Taxonomy_Service_ExtDirect_Controller_ConceptController extends Tx_Extb
 	 * @param stdClass $nodeData
 	 * @return array
 	 */
-	//public function getNextTreeLevel($nodeId, $nodeData) {
-	public function getNextTreeLevel() {
+	public function getNextTreeLevel($nodeId) {
 		
 		$values[] = Array(
 			'text' => 'To Do3',
@@ -54,11 +53,11 @@ class Tx_Taxonomy_Service_ExtDirect_Controller_ConceptController extends Tx_Extb
 			'cls' => 'folder',
 			'expanded' => false,
 		);
-		return $values;
+		#return $values;
 		
 		/** @var $tree Tx_Taxonomy_Service_ExtDirect_Controller_Tree */
 		$tree = t3lib_div::makeInstance('Tx_Taxonomy_Service_ExtDirect_Controller_Tree');
-		return $tree->getNextTreeLevel($nodeId, $nodeData);
+		return $tree->getNextTreeLevel($nodeId);
 	}
 //	
 //	/**

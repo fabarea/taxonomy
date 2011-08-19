@@ -71,16 +71,14 @@ class Tx_Taxonomy_Service_ExtDirect_Controller_Tree extends Tx_Taxonomy_Service_
 	 * @param stdClass $nodeData
 	 * @return array
 	 */
-	public function getNextTreeLevel($nodeId, $nodeData) {
-
-
-
+	public function getNextTreeLevel($nodeId, $nodeData = array()) {
+		
 		$this->initDataProvider();
 
 		/** @var $node t3lib_tree_pagetree_Node */
 		$node = t3lib_div::makeInstance('t3lib_tree_pagetree_Node', (array) $nodeData);
 
-		if ($nodeId === 'root') {
+		if ($nodeId->node === 'root') {
 			$nodeCollection = $this->dataProvider->getTreeMounts();
 		} else {
 			$nodeCollection = $this->dataProvider->getNodes($node);
