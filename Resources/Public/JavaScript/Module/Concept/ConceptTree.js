@@ -141,8 +141,6 @@ define(['Taxonomy/Core/Application'], function(Application) {
 		 */
 		initComponent: function() {
 
-
-
 			var config = {
 				
 				store: Ext.create('Ext.data.TreeStore', {
@@ -158,12 +156,20 @@ define(['Taxonomy/Core/Application'], function(Application) {
 				height: 300,
 				minSize: 150,
 				autoScroll: true,
-				enableDrop:true,
 
 //				plugins: new TYPO3.Taxonomy.Plugins.StateTreePanel(),
+				useArrows: true,
+				viewConfig: {
+					plugins: {
+						ptype: 'treeviewdragdrop',
+					},
+					listeners: {
+						drop: function(node, data, model, pos, drop) {
+						}
+					}
+				},
 				// tree-specific configs:
 				rootVisible: true,
-				singleExpand: true,
 				
 				tbar: [{
 					xtype: 'button',
@@ -208,6 +214,8 @@ define(['Taxonomy/Core/Application'], function(Application) {
 //				})
 
 			};
+			
+			this.on('OnDragDrop', function() {console.log(123)}, this);
 
 			Ext.apply(this, config);
 			TYPO3.Taxonomy.Module.Concept.Tree.superclass.initComponent.call(this);
