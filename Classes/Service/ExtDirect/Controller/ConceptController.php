@@ -34,6 +34,16 @@
 class Tx_Taxonomy_Service_ExtDirect_Controller_ConceptController extends Tx_Extbase_MVC_Controller_ActionController {
 	
 	/**
+	 * Update an existing 
+	 *
+	 * @param int $nodeId
+	 * @return sting
+	 */
+	public function edit($nodeId) {
+		return $nodeId;
+	}
+	
+	/**
 	 * Fetches the next tree level
 	 *
 	 * @param int $nodeId

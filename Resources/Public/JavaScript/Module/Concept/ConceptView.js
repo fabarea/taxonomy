@@ -54,6 +54,7 @@ define(['Taxonomy/Core/Application', 'Taxonomy/Module/Concept/ConceptTree'], fun
 		initComponent: function() {
 
 			var config = {
+				id: 'TYPO3.Taxonomy.Module.Concept.ConceptView',
 				layout: 'border',
 				defaults: {
 					collapsible: true,
@@ -89,10 +90,10 @@ define(['Taxonomy/Core/Application', 'Taxonomy/Module/Concept/ConceptTree'], fun
 //						html: 'dummy text'
 //					}]
 //				}, {
+					id: 'TYPO3.Taxonomy.Module.Concept.ConceptContent',
                     xtype: 'panel',
 					region: 'center',
 					collapsible: false,
-					html: 'coucou'
                  }]
 			}
 		

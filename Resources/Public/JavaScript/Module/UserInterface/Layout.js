@@ -45,6 +45,7 @@ define(['Taxonomy/Core/Application', 'Taxonomy/Core/Registry', 'Taxonomy/Module/
 					bodyStyle: 'padding:15px'
 				},
 				items: [{
+						
 					/*
 					 * CENTER PANEL
 					 */
@@ -70,7 +71,6 @@ define(['Taxonomy/Core/Application', 'Taxonomy/Core/Registry', 'Taxonomy/Module/
 		_defaultItems: {
 			region: 'north',
 			xtype: 'TYPO3.Taxonomy.Module.UserInterface.DocHeader',
-			ref: '../../docHeader'
 		},
 		
 		/**
@@ -91,7 +91,6 @@ define(['Taxonomy/Core/Application', 'Taxonomy/Core/Registry', 'Taxonomy/Module/
 						region: 'center',
 						border: 0,
 						id: 'typo3-inner-docbody',
-						ref: '../../conceptView',
 						layout: 'card',
 						activeItem: 0
 					}

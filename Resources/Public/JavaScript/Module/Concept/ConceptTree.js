@@ -119,12 +119,12 @@ define(['Taxonomy/Core/Application'], function(Application) {
 //			inCutMode: false
 //		},
 //
-//		/**
-//		 * Registered clicks for the double click feature
-//		 *
-//		 * @type {int}
-//		 */
-//		clicksRegistered: 0,
+		/**
+		 * Registered clicks for the double click feature
+		 *
+		 * @type {int}
+		 */
+		clicksRegistered: 0,
 //
 //		/**
 //		 * Indicator if the control key was pressed
@@ -185,38 +185,25 @@ define(['Taxonomy/Core/Application'], function(Application) {
 					nodeData: {
 						id: 'root'
 					}
-				},
-
-//				loader: new Ext.tree.TreeLoader({
-//					directFn: TYPO3.Taxonomy.Service.ExtDirect.Controller.ConceptController.getNextTreeLevel,
-//					paramOrder: 'nodeId,attributes',
-//					nodeParameter: 'nodeId',
-//					baseAttrs: {
-//						uiProvider: this.uiProvider
-//					},
-//
-//						// an id can never be zero in ExtJS, but this is needed
-//						// for the root line feature or it will never be working!
-//					createNode: function(attr) {
-//						if (attr.id == 0) {
-//							attr.id = 'siteRootNode';
-//						}
-//						return Ext.tree.TreeLoader.prototype.createNode.call(this, attr);
-//					},
-//
-//					listeners: {
-//						beforeload: function(treeLoader, node) {
-//							console.log(node);
-//							treeLoader.baseParams.nodeId = node.id;
-//							treeLoader.baseParams.attributes = node.attributes.nodeData;
-//						}
-//					}
-//				})
-
+				}
 			};
 			
-			this.on('OnDragDrop', function() {console.log(123)}, this);
-
+			
+			// Listeners:
+			// Event handlers that handle click events and synchronizes the label edit,
+			this.on(
+				'itemclick',
+				this.onItemClick,
+				this,
+				{delay: 400}
+			);
+			
+			this.on(
+				'itemdblclick',
+				this.onItemDblClick,
+				this
+			);
+				
 			Ext.apply(this, config);
 			TYPO3.Taxonomy.Module.Concept.Tree.superclass.initComponent.call(this);
 			//TYPO3.Taxonomy.Application.fireEvent('TYPO3.Taxonomy.Module.ConceptTree.afterInit', this);
@@ -230,44 +217,45 @@ define(['Taxonomy/Core/Application'], function(Application) {
 //		beforedblclick: function(node, event) {
 //			return false;
 //		},
-//
-//		/**
-//		 * prevents label edit on a selected node
-//		 *
-//		 * @return void
-//		 */
-//		beforeclick: function(node, event) {
-//			if (!this.clicksRegistered && this.getSelectionModel().isSelected(node)) {
-//				node.fireEvent('click', node, event);
-//				++this.clicksRegistered;
-//				return false;
-//			}
-//			++this.clicksRegistered;
-//		},
-//
-//		/**
-//		 * Action when leaf is clicked
-//		 *
-//		 * single click handler that only triggers after a delay to let the double click event
-//		 * a possibility to be executed (needed for label edit)
-//		 *
-//		 * @return void
-//		 */
-//		onClick: function(node, event) {
-//
+
+
+		/**
+		 * Action when leaf is double clicked
+		 *
+		 * @param {Ext.view.View} this
+		 * @param {Ext.data.Model} record The record that belongs to the item
+		 * @param {HTMLElement} item The item's element
+		 * @param {Number} index The item's index
+		 * @param {Ext.EventObject} e The raw event object
+		 */
+		onItemDblClick: function(view, model, htmlElement, number, event) {
+			this.clicksRegistered = 2;
+		},
+				
+		 /**
+		 * Action when leaf is clicked
+		 *
+		 * single click handler that only triggers after a delay to let the double click event
+		 * a possibility to be executed (needed for label edit)
+		 * 
+		 * @param {Ext.view.View} this
+		 * @param {Ext.data.Model} record The record that belongs to the item
+		 * @param {HTMLElement} item The item's element
+		 * @param {Number} index The item's index
+		 * @param {Ext.EventObject} e The raw event object
+		 */
+		onItemClick: function(view, model, htmlElement, number, event) {
+
+			// @todo find a way to detect a double click => leaf get edited
 //			if (this.clicksRegistered === 2) {
-//				this.clicksRegistered = 0;
 //				event.stopEvent();
 //				return false;
 //			}
-//
-//			this.clicksRegistered = 0;
-//
-//
-//	//		console.log(node.text);
-//	//		console.log(node.id);
-//	//		console.log(node);
-//
+			
+			TYPO3.Taxonomy.Service.ExtDirect.Controller.ConceptController.edit(model.get('id'), function(result) {
+				Ext.getCmp('TYPO3.Taxonomy.Module.Concept.ConceptContent').update(result);
+			});
+
 //			if (this.stateHash) {
 //				this.stateHash.lastSelectedNode = node.id;
 //			}
@@ -295,12 +283,12 @@ define(['Taxonomy/Core/Application'], function(Application) {
 //				TYPO3.Taxonomy.UserInterface.doc.content.layout.setActiveItem('absolute-panel' + node.id);
 //
 //			});
-//
-//
-//	//		if (this.commandProvider.singleClick) {
-//	//			this.commandProvider.singleClick(node, this);
-//	//		}
-//		},
+
+
+	//		if (this.commandProvider.singleClick) {
+	//			this.commandProvider.singleClick(node, this);
+	//		}
+		},
 
 //		/**
 //		 * Triggers the editing of the node if the tree editor is available

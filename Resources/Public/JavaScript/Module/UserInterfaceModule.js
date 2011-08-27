@@ -66,7 +66,7 @@ define(['Taxonomy/Core/Application', 'Taxonomy/Core/Registry', 'Taxonomy/Module/
 	Application.on(
 		'TYPO3.Taxonomy.Application.afterBootstrap',
 		function(e) {
-			TYPO3.Taxonomy.Module.UserInterface.doc = new TYPO3.Taxonomy.Module.UserInterface.Layout();
+			TYPO3.Taxonomy.Layout = new TYPO3.Taxonomy.Module.UserInterface.Layout();
 		},
 		this
 	);
