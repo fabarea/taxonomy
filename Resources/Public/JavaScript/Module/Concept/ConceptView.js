@@ -72,8 +72,7 @@ define(['Taxonomy/Core/Application', 'Taxonomy/Module/Concept/ConceptTree'], fun
 					region:'west',
 					width: 200,
 					items: [{
-						xtype: 'TYPO3.Taxonomy.Module.Concept.Tree',
-						//ref: '../../../tree'
+						xtype: 'TYPO3.Taxonomy.Module.Concept.Tree'
 					}]
 
 				}, {
