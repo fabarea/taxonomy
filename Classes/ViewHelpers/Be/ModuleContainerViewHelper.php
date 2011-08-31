@@ -138,6 +138,38 @@ class Tx_Taxonomy_ViewHelpers_Be_ModuleContainerViewHelper extends Tx_Taxonomy_V
 			$this->pageRenderer->enableConcatenateFiles();
 		}
 
+		$this->jsFiles = array(
+			'common'                => 'js/common.js',
+//			'locallang'             => $this->getLocalLangFileName(),
+			'modernizr'             => 'contrib/modernizr/modernizr.min.js',
+			'swfupload'             => 'contrib/swfupload/swfupload.js',
+			'swfupload.swfobject'   => 'contrib/swfupload/plugins/swfupload.swfobject.js',
+			'swfupload.cookies'     => 'contrib/swfupload/plugins/swfupload.cookies.js',
+			'swfupload.queue'       => 'contrib/swfupload/plugins/swfupload.queue.js',
+			'md5'                   => 'md5.js',
+			'toolbarmanager'        => 'js/toolbarmanager.js',
+			'modulemenu'            => 'js/modulemenu.js',
+			'iecompatibility'       => 'js/iecompatibility.js',
+			'flashupload'           => 'js/flashupload.js',
+			'evalfield'             => '../t3lib/jsfunc.evalfield.js',
+			'flashmessages'         => '../t3lib/js/extjs/ux/flashmessages.js',
+			'tabclosemenu'          => '../t3lib/js/extjs/ux/ext.ux.tabclosemenu.js',
+			'notifications'         => '../t3lib/js/extjs/notifications.js',
+			'backend'               => 'js/backend.js',
+			'loginrefresh'          => 'js/loginrefresh.js',
+			'debugPanel'            => 'js/extjs/debugPanel.js',
+			'viewport'              => 'js/extjs/viewport.js',
+			'iframepanel'           => 'js/extjs/iframepanel.js',
+			'viewportConfiguration' => 'js/extjs/viewportConfiguration.js',
+			'util'					=> '../t3lib/js/extjs/util.js',
+		);
+
+			// Add some more JS file
+			// @todo waiting for ExtJS 4 migration
+//		foreach ($this->jsFiles as $jsFile) {
+//			$this->pageRenderer->addJsFile($jsFile);
+//		}
+			
 			// Add RequiresJS code
 		$this->generateRequireJS();
 		
