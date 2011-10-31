@@ -3,7 +3,7 @@ if (!defined ('TYPO3_MODE')){
 	die ('Access denied.');
 }
 t3lib_extMgm::allowTableOnStandardPages('sys_category');
-$TCA['tx_taxonomy_domain_model_concept'] = array(
+$TCA['sys_category'] = array(
 	'ctrl' => array(
 		'title'				=> 'LLL:EXT:taxonomy/Resources/Private/Language/locallang_db.xml:sys_category',
 		'label' 			=> 'label',
