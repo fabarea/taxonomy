@@ -3,16 +3,16 @@ if (!defined ('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
-$TCA['tx_taxonomy_domain_model_relationtype'] = array(
-	'ctrl' => $TCA['tx_taxonomy_domain_model_relationtype']['ctrl'],
+$TCA['sys_category'] = array(
+	'ctrl' => $TCA['sys_category']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList'	=> 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, tx_extbase_type, name, description',
+		'showRecordFieldList'	=> 'label,description',
 	),
 	'types' => array(
-		'1' => array('showitem'	=> 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, tx_extbase_type, name, description,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'),
+		'1' => array('showitem'	=> 'label;;1, parent,description,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'),
 	),
 	'palettes' => array(
-		'1' => array('showitem'	=> ''),
+		'1' => array('showitem'	=> 'sys_language_uid, l10n_parent, hidden'),
 	),
 	'columns' => array(
 		'sys_language_uid' => array(
@@ -37,8 +37,8 @@ $TCA['tx_taxonomy_domain_model_relationtype'] = array(
 				'items'			=> array(
 					array('', 0),
 				),
-				'foreign_table' => 'tx_taxonomy_domain_model_relationtype',
-				'foreign_table_where' => 'AND tx_taxonomy_domain_model_relationtype.uid=###REC_FIELD_l10n_parent### AND tx_taxonomy_domain_model_relationtype.sys_language_uid IN (-1,0)',
+				'foreign_table' => 'tx_taxonomy_domain_model_concept',
+				'foreign_table_where' => 'AND tx_taxonomy_domain_model_concept.uid=###REC_FIELD_l10n_parent### AND tx_taxonomy_domain_model_concept.sys_language_uid IN (-1,0)',
 			),
 		),
 		'l10n_diffsource' => array(
@@ -60,20 +60,6 @@ $TCA['tx_taxonomy_domain_model_relationtype'] = array(
 			'config'	=> array(
 				'type'	=> 'check',
 			),
-		),
-		'tx_extbase_type' => array(
-			'exclude' => 1,
-			'label'   => 'LLL:EXT:taxonomy/Resources/Private/Language/locallang_db.xml:tx_taxonomy_domain_model_relationtype.tx_extbase_type',
-			'config' => array(
-				'type' => 'select',
-				'items' => array(
-					array('LLL:EXT:taxonomy/Resources/Private/Language/locallang_db.xml:tx_taxonomy_domain_model_relationtype.tx_extbase_type.Tx_Taxonomy_Domain_Model_SemanticRelationType', 'Tx_Taxonomy_Domain_Model_SemanticRelationType'),
-					array('LLL:EXT:taxonomy/Resources/Private/Language/locallang_db.xml:tx_taxonomy_domain_model_relationtype.tx_extbase_type.Tx_Taxonomy_Domain_Model_LabelRelationType', 'Tx_Taxonomy_Domain_Model_LabelRelationType')
-				),
-				'size' => 1,
-				'maxitems' => 1,
-				'default' => 'Tx_Taxonomy_Domain_Model_SemanticRelationType'
-			)
 		),
 		'starttime' => array(
 			'exclude' => 1,
@@ -105,25 +91,31 @@ $TCA['tx_taxonomy_domain_model_relationtype'] = array(
 				),
 			),
 		),
-		'name' => array(
+		'label' => array(
 			'exclude'	=> 0,
-			'label'		=> 'LLL:EXT:taxonomy/Resources/Private/Language/locallang_db.xml:tx_taxonomy_domain_model_relationtype.name',
+			'label'		=> 'LLL:EXT:taxonomy/Resources/Private/Language/locallang_db.xml:sys_category.label',
 			'config'	=> array(
 				'type' => 'input',
-				'size' => 30,
+				'width'=> '200',
 				'eval' => 'trim,required'
 			),
 		),
-		'description' => array(
-			'exclude'	=> 0,
-			'label'		=> 'LLL:EXT:taxonomy/Resources/Private/Language/locallang_db.xml:tx_taxonomy_domain_model_relationtype.description',
-			'config'	=> array(
-				'type' => 'input',
-				'size' => 30,
-				'eval' => 'trim'
+		'parent' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:taxonomy/Resources/Private/Language/locallang_db.xml:sys_category.parent',
+			'config' => array(
+				'minitems' => 0,
+				'maxitems' => 1,
+				
+				
+				'type' => 'select',
+				'renderMode' => 'tree',
+				'foreign_table' => 'sys_category',
+				'treeConfig' => array(
+					'parentField' => 'parent'
+				),
 			),
 		),
 	),
 );
-## KICKSTARTER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the kickstarter
 ?>
