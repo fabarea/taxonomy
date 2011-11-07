@@ -9,7 +9,7 @@ $TCA['sys_category'] = array(
 		'showRecordFieldList'	=> 'label,description',
 	),
 	'types' => array(
-		'1' => array('showitem'	=> 'label;;1, parent,description,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'),
+		'1' => array('showitem'	=> 'label;;1, parent,description,items,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem'	=> 'sys_language_uid, l10n_parent, hidden'),
@@ -116,6 +116,26 @@ $TCA['sys_category'] = array(
 				),
 			),
 		),
+		'description' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:taxonomy/Resources/Private/Language/locallang_db.xml:sys_category.description',
+			'config' => array(
+				'type' => 'text',
+			),
+		),
+		'items' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:taxonomy/Resources/Private/Language/locallang_db.xml:sys_category.items',
+			'config' => array(
+				'type' => 'group',
+				'internal_type' => 'db',
+				'allowed' => '*',
+				'MM' => 'sys_category_record_mm',
+				'MM_hasUidField' => true,
+				'show_thumbs' => false,
+				//'disable_controls' => 'browser,list,upload'
+			)
+		)
 	),
 );
 ?>

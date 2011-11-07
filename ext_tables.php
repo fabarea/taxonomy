@@ -17,6 +17,7 @@ $TCA['sys_category'] = array(
 		'transOrigPointerField' 	=> 'l10n_parent',
 		'transOrigDiffSourceField' 	=> 'l10n_diffsource',
 		'delete' 			=> 'deleted',
+		'searchFields' => 'label,description',
 		'enablecolumns' 	=> array(
 			'disabled' => 'hidden',
 			'starttime' => 'starttime',
@@ -26,8 +27,6 @@ $TCA['sys_category'] = array(
 		'iconfile' 			=> t3lib_extMgm::extRelPath($_EXTKEY) . 'Resources/Public/Icons/concept.png'
 	),
 );
-
-
 
 
 ?>

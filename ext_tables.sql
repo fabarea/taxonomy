@@ -2,10 +2,11 @@
 CREATE TABLE sys_category (
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
-	parent int(11) DEFAULT '0' NOT NULL,
 
+	parent int(11) DEFAULT '0' NOT NULL,
 	label tinytext NOT NULL,
 	description text NOT NULL,
+	items int(11) DEFAULT '0' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,
@@ -35,13 +36,15 @@ CREATE TABLE sys_category (
 
 
 CREATE TABLE sys_category_record_mm (
-
+	uid int(11) DEFAULT '0' NOT NULL auto_increment,
 	uid_local int(11) unsigned DEFAULT '0' NOT NULL,
-	foreign_table tinytext DEFAULT '' NOT NULL,
+	tablenames tinytext NOT NULL,
 	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
 	sorting int(11) unsigned DEFAULT '0' NOT NULL,
 	sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
 
+	PRIMARY KEY (uid),
 	KEY uid_local (uid_local),
-	KEY uid_foreign (uid_foreign)
+	KEY uid_foreign (uid_foreign),
+	KEY tablenames (tablenames(255)),
 );
